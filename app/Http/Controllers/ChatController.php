@@ -15,14 +15,5 @@ class ChatController extends Controller
         $messages = ChatMessage::all();
         return view('chat.index', compact('messages'));
     }
-
-    public function postMessage(Request $request)
-    {
-        $message = ChatMessage::create($request->all());
-        event(
-          new ChatMessageAdded($message)
-        );
-        return redirect()->back();
-    }
 }
 
