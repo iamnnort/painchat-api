@@ -24,7 +24,7 @@ io.on('connection', function (socket) {
     socket.on('add_message', function (message) {
         console.log(message);
         request.post({
-            url: 'http://painchat-api.loc/api/messages',
+            url: 'http://localhost:8000/api/messages',
             json: message,
         }, function (error, response, json) {
             console.log(json);
